@@ -21,13 +21,18 @@ ApplicationWindow {
     SwipeView {
         id: swipeView
         anchors.fill: parent
-        currentIndex: tabBar.currentIndex
-        interactive: true
+        currentIndex: 0
+        //currentIndex: tabBar.currentIndex
+        interactive: false
 
 
 
         Page1Form {
             id: homePage
+            Image {
+                id: tunijpg
+                source: "images/kuvat/tuni.jpg"
+            }
             testi.onClicked: {
                 //server.connection = qsTr("haloo")
                 testi.text = server.connection
@@ -52,7 +57,7 @@ ApplicationWindow {
         }
     }
 
-    footer: TabBar {
+    /*footer: TabBar {
         id: tabBar
         currentIndex: swipeView.currentIndex
 
@@ -66,5 +71,5 @@ ApplicationWindow {
         TabButton {
             text: qsTr("Choose target")
         }
-    }
+    }*/
 }

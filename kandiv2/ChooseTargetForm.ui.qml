@@ -12,49 +12,65 @@ Page {
     property alias targetDone: targetDone
 
     header: Label {
+        color: "#ffffff"
         text: qsTr("Choose target location")
         font.pixelSize: Qt.application.font.pixelSize * 2
         padding: 10
     }
 
-    Row {
-        id: row
+    FocusScope {
+        id: focusScope
         anchors.fill: parent
 
-        Column {
-            id: column
-            width: row.width/4
-            height: row.height
+        FocusScope {
+            id: focusScope1
+            width: focusScope.width / 4
+            height: focusScope.height
 
             Label {
                 id: label
-                text: qsTr("Label")
+                x: 64
+                y: 20
+                text: qsTr("TV 1")
+                anchors.top: parent.top
+                anchors.topMargin: 20
+                anchors.horizontalCenterOffset: 0
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
             CheckBox {
                 id: tv1
-                text: qsTr("TV 1")
+                x: 62
+                y: 50
+                width: 30
+                height: 30
                 anchors.top: parent.top
                 anchors.topMargin: 50
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
-        Column {
-            id: column1
-            width: row.width/4
-            height: row.height
+        FocusScope {
+            id: focusScope2
+            width: focusScope.width / 4
+            height: focusScope.height
+            anchors.leftMargin: focusScope.width / 4
+            anchors.left: parent.left
 
             Label {
                 id: label1
-                text: qsTr("Label")
+                x: 64
+                y: 20
+                text: qsTr("TV 2")
+                anchors.top: parent.top
+                anchors.topMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
             CheckBox {
                 id: tv2
-                text: qsTr("TV 2")
+                x: 62
+                y: 50
                 anchors.top: parent.top
                 anchors.topMargin: 50
                 anchors.horizontalCenterOffset: 0
@@ -63,27 +79,39 @@ Page {
 
             Button {
                 id: targetDone
+                x: 53
+                y: 301
+                width: 100
+                height: 40
                 text: qsTr("Ok")
+                font.pixelSize: 15
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: 20
+                anchors.bottomMargin: 60
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
-        Column {
-            id: column2
-            width: row.width/4
-            height: row.height
+        FocusScope {
+            id: focusScope3
+            width: focusScope.width / 4
+            height: focusScope.height
+            anchors.leftMargin: focusScope.width / 4 * 2
+            anchors.left: parent.left
 
             Label {
                 id: label2
-                text: qsTr("Label")
+                x: 64
+                y: 20
+                text: qsTr("TV 3")
+                anchors.top: parent.top
+                anchors.topMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
             CheckBox {
                 id: tv3
-                text: qsTr("TV 3")
+                x: 62
+                y: 50
                 anchors.horizontalCenterOffset: 0
                 anchors.top: parent.top
                 anchors.topMargin: 50
@@ -92,34 +120,98 @@ Page {
 
             Button {
                 id: targetCancel
+                x: 46
+                y: 301
+                width: 100
+                height: 40
                 text: qsTr("Cancel")
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: 20
+                anchors.bottomMargin: 60
             }
         }
 
-        Column {
-            id: column3
-            width: row.width/4
-            height: row.height
+        FocusScope {
+            id: focusScope4
+            y: 0
+            width: focusScope.width / 4
+            height: focusScope.height
+            anchors.leftMargin: focusScope.width / 4 * 3
+            anchors.left: parent.left
 
             Label {
                 id: label3
-                text: qsTr("Label")
+                x: 64
+                y: 20
+                text: qsTr("TV 4")
+                anchors.top: parent.top
+                anchors.topMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
             CheckBox {
                 id: tv4
-                text: qsTr("TV 4")
+                x: 62
+                y: 50
                 anchors.top: parent.top
                 anchors.topMargin: 50
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
+        Rectangle {
+            id: rectangle
+            width: focusScope.width
+            height: 50
+            color: "#471391"
+            anchors.top: parent.top
+            anchors.topMargin: -50
+            anchors.left: parent.left
+            anchors.leftMargin: 0
+        }
 
+        Rectangle {
+            id: rectangle1
+            width: focusScope.width
+            height: 30
+            color: "#00000000"
+            gradient: Gradient {
+                GradientStop {
+                    position: 0
+                    color: "#00000000"
+                }
 
+                GradientStop {
+                    position: 1
+                    color: "#471391"
+                }
+            }
+            border.color: "#ffffff"
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 0
+        }
+
+        Image {
+            id: image
+            x: 500
+            width: 50
+            height: 50
+            anchors.right: parent.right
+            anchors.rightMargin: 0
+            anchors.top: parent.top
+            anchors.topMargin: -50
+            fillMode: Image.PreserveAspectFit
+            source: "kuvat/tuni.jpg"
+        }
     }
 }
+
+
+
+
+
+
+/*##^## Designer {
+    D{i:17;anchors_x:150;anchors_y:0}D{i:22;anchors_y:"-50"}D{i:2;anchors_height:100;anchors_width:100}
+}
+ ##^##*/

@@ -10,79 +10,102 @@ Page {
     property alias sourceBox1: sourceBox1
 
     header: Label {
+        color: "#ffffff"
         text: qsTr("Choose source location")
         font.pixelSize: Qt.application.font.pixelSize * 2
         padding: 10
     }
 
-    Row {
-        id: row
-        x: 0
-        y: 0
+    FocusScope {
+        id: focusScope
         anchors.fill: parent
 
-        Column {
-            id: column2
-            width: 200
-            height: 400
+        ComboBox {
+            id: sourceBox1
+            x: 240
+            y: 161
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.horizontalCenterOffset: 0
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
 
-            Label {
-                id: label
-                text: qsTr("Label")
-            }
+        Label {
+            id: label1
+            x: 244
+            y: 30
+            text: qsTr("Choose source number")
+            anchors.bottom: sourceBox1.top
+            anchors.bottomMargin: 20
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
 
-            ComboBox {
-                id: sourceBox1
-                anchors.top: parent.top
-                anchors.topMargin: 20
-                anchors.horizontalCenterOffset: 0
+        FocusScope {
+            id: focusScope1
+            width: focusScope.width / 4
+            height: focusScope.height
+            anchors.leftMargin: focusScope.width / 4
+            anchors.left: parent.left
+
+            Button {
+                id: sourceDone
+                x: 203
+                y: 301
+                width: 100
+                height: 40
+                text: qsTr("Ok")
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
-        Column {
-            id: column
-            width: 200
-            height: 400
+        FocusScope {
+            id: focusScope2
+            width: focusScope.width / 4
+            height: focusScope.height
+            anchors.leftMargin: focusScope.width / 4 * 2
+            anchors.left: parent.left
 
-            Label {
-                id: label1
-                text: qsTr("Label")
+            Button {
+                id: sourceCancel
+                x: -104
+                y: 301
+                width: 100
+                height: 40
+                text: qsTr("Cancel")
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 20
             }
         }
-
-        Column {
-            id: column1
-            width: 200
-            height: 400
-
-            Label {
-                id: label2
-                text: qsTr("Label")
-            }
-
-        }
-
     }
 
-    Button {
-        id: sourceDone
-        text: qsTr("Ok")
-        anchors.horizontalCenterOffset: -80
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 20
+    Rectangle {
+        id: rectangle
+        width: page.width
+        height: 50
+        color: "#471391"
+        anchors.top: parent.top
+        anchors.topMargin: -50
     }
 
-    Button {
-        id: sourceCancel
-        text: qsTr("Cancel")
-        anchors.horizontalCenterOffset: 80
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 20
+    Image {
+        id: image
+        width: 50
+        height: 50
+        anchors.right: parent.right
+        anchors.rightMargin: 0
+        anchors.top: parent.top
+        anchors.topMargin: -50
+        fillMode: Image.PreserveAspectFit
+        source: "kuvat/tuni.jpg"
     }
-
-
-
 }
+
+
+
+
+/*##^## Designer {
+    D{i:2;anchors_height:100;anchors_width:100}
+}
+ ##^##*/
