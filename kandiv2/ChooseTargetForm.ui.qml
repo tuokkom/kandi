@@ -12,6 +12,7 @@ Page {
     property alias targetDone: targetDone
 
     header: Label {
+        height: 50
         color: "#ffffff"
         text: qsTr("Choose target location")
         font.pixelSize: Qt.application.font.pixelSize * 2
@@ -175,6 +176,7 @@ Page {
             width: focusScope.width
             height: 30
             color: "#00000000"
+            visible: false
             gradient: Gradient {
                 GradientStop {
                     position: 0

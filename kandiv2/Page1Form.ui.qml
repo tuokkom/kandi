@@ -269,7 +269,7 @@ Page {
 
             GradientStop {
                 position: 1
-                color: "#471391"
+                color: "#ffffff"
             }
         }
         border.color: "#00000000"
