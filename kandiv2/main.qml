@@ -11,8 +11,22 @@ ApplicationWindow {
 
     Server {
         id: server
-        onMessageSent: console.log("Message sent at " + timestamp + " target: " + target + " message: " +  message)
-        onMessageReceived: console.log("Message received at " + timestamp + " source: " + source + " message: " +  message )
+        onMessageSent: {
+            console.log("Message sent at " + timestamp + " target: " + target + " message: " +  message)
+             //if (message == "r 1 1"){
+                //homePage.errorWindow.visible = true
+                //homePage.goToPage2.visible = false
+            //}
+
+        }
+        onMessageReceived: {
+
+            console.log("Message received at " + timestamp + " source: " + source + " message: " +  message )
+            if (message == "Remote UDP IP Address Access Deny!"){
+                homePage.errorWindow.visible = true
+                homePage.goToPage2.visible = false
+            }
+        }
         onConnectionChanged: console.log("Connection status changed")
 
 
@@ -29,22 +43,21 @@ ApplicationWindow {
 
         Page1Form {
             id: homePage
-            Image {
-                id: tunijpg
-                source: "images/kuvat/tuni.jpg"
-            }
-            testi.onClicked: {
+            //Image {
+            //    id: tunijpg
+            //    source: "images/kuvat/tuni.jpg"
+            //}
+            //testi.onClicked: {
                 //server.connection = qsTr("haloo")
-                testi.text = server.connection
+                //testi.text = server.connection
                 //server.setConnection: qsTr("haloo")
-            }
+            //}
 
             goToPage2.onClicked: {
                 swipeView.incrementCurrentIndex()
                 console.log("go to page 2")
 
             }
-            testilabel.text: server.connection
 
         }
 

@@ -33,7 +33,7 @@ Page {
                 x: 64
                 y: 20
                 text: qsTr("TV 1")
-                anchors.top: parent.top
+                anchors.top: image1.bottom
                 anchors.topMargin: 20
                 anchors.horizontalCenterOffset: 0
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -45,9 +45,21 @@ Page {
                 y: 50
                 width: 30
                 height: 30
-                anchors.top: parent.top
-                anchors.topMargin: 50
+                anchors.top: image1.bottom
+                anchors.topMargin: 40
                 anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Image {
+                id: image1
+                x: 25
+                width: 80
+                height: 80
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.top: parent.top
+                anchors.topMargin: 20
+                source: "kuvat/564-512.png"
+                fillMode: Image.PreserveAspectFit
             }
         }
 
@@ -63,7 +75,7 @@ Page {
                 x: 64
                 y: 20
                 text: qsTr("TV 2")
-                anchors.top: parent.top
+                anchors.top: image2.bottom
                 anchors.topMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
             }
@@ -72,8 +84,8 @@ Page {
                 id: tv2
                 x: 62
                 y: 50
-                anchors.top: parent.top
-                anchors.topMargin: 50
+                anchors.top: label1.bottom
+                anchors.topMargin: 20
                 anchors.horizontalCenterOffset: 0
                 anchors.horizontalCenter: parent.horizontalCenter
             }
@@ -90,6 +102,20 @@ Page {
                 anchors.bottomMargin: 60
                 anchors.horizontalCenter: parent.horizontalCenter
             }
+
+            Image {
+                id: image2
+                x: 34
+                y: 53
+                width: 80
+                height: 80
+                anchors.horizontalCenterOffset: 0
+                anchors.top: parent.top
+                source: "kuvat/564-512.png"
+                anchors.topMargin: 20
+                fillMode: Image.PreserveAspectFit
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
         }
 
         FocusScope {
@@ -104,7 +130,7 @@ Page {
                 x: 64
                 y: 20
                 text: qsTr("TV 3")
-                anchors.top: parent.top
+                anchors.top: image3.bottom
                 anchors.topMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
             }
@@ -114,8 +140,8 @@ Page {
                 x: 62
                 y: 50
                 anchors.horizontalCenterOffset: 0
-                anchors.top: parent.top
-                anchors.topMargin: 50
+                anchors.top: label2.bottom
+                anchors.topMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
@@ -129,6 +155,20 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 60
+            }
+
+            Image {
+                id: image3
+                x: -14
+                y: 102
+                width: 80
+                height: 80
+                anchors.horizontalCenterOffset: 0
+                anchors.top: parent.top
+                source: "kuvat/564-512.png"
+                anchors.topMargin: 20
+                fillMode: Image.PreserveAspectFit
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -145,7 +185,7 @@ Page {
                 x: 64
                 y: 20
                 text: qsTr("TV 4")
-                anchors.top: parent.top
+                anchors.top: image4.bottom
                 anchors.topMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
             }
@@ -154,8 +194,22 @@ Page {
                 id: tv4
                 x: 62
                 y: 50
+                anchors.top: label3.bottom
+                anchors.topMargin: 20
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Image {
+                id: image4
+                x: -63
+                y: 90
+                width: 80
+                height: 80
+                anchors.horizontalCenterOffset: 0
                 anchors.top: parent.top
-                anchors.topMargin: 50
+                source: "kuvat/564-512.png"
+                anchors.topMargin: 20
+                fillMode: Image.PreserveAspectFit
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -211,9 +265,8 @@ Page {
 
 
 
-
-
 /*##^## Designer {
-    D{i:17;anchors_x:150;anchors_y:0}D{i:22;anchors_y:"-50"}D{i:2;anchors_height:100;anchors_width:100}
+    D{i:6;anchors_y:140}D{i:11;anchors_y:140}D{i:16;anchors_y:140}D{i:20;anchors_y:140}
+D{i:21;anchors_x:150;anchors_y:0}D{i:26;anchors_y:"-50"}D{i:2;anchors_height:100;anchors_width:100}
 }
  ##^##*/

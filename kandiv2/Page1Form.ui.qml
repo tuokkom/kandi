@@ -5,18 +5,12 @@ Page {
     id: page
     width: 600
     height: 400
-    property alias tv2isChecked: tv2isChecked
+    property alias errorOk: errorOk
+    property alias errorWindow: errorWindow
     property alias tv4connectedTo: tv4connectedTo
     property alias tv3connectedTo: tv3connectedTo
     property alias tv2connectedTo: tv2connectedTo
     property alias tv1connectedTo: tv1connectedTo
-    property alias connectionAsNum: connectionAsNum
-    property alias testilabel: testilabel
-    property alias testi: testi
-    property alias tv4isChecked: tv4isChecked
-    property alias tv3isChecked: tv3isChecked
-    property alias tv1isChecked: tv1isChecked
-    property alias infoLabel: infoLabel
     property alias goToPage2: goToPage2
 
     header: Label {
@@ -66,8 +60,8 @@ Page {
                 y: 40
                 text: qsTr("Disconnected")
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.top: parent.top
-                anchors.topMargin: 40
+                anchors.top: label.bottom
+                anchors.topMargin: 20
             }
 
             Label {
@@ -76,47 +70,19 @@ Page {
                 y: 20
                 text: qsTr("TV1 connected to")
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.top: parent.top
+                anchors.top: image2.bottom
                 anchors.topMargin: 20
             }
 
-            Label {
-                id: testilabel
-                x: 29
-                y: 320
-                text: qsTr("You are on Page 1.")
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 20
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            Label {
-                id: connectionAsNum
-                x: 62
-                y: 300
-                text: qsTr("Label")
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 40
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            Button {
-                id: testi
-                x: 47
-                y: 261
-                text: qsTr("Button")
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 60
-            }
-
-            Label {
-                id: infoLabel
-                x: 65
-                y: 240
-                text: qsTr("info")
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 100
+            Image {
+                id: image2
+                x: 25
+                width: 80
+                height: 80
+                anchors.top: parent.top
+                source: "kuvat/564-512.png"
+                anchors.topMargin: 20
+                fillMode: Image.PreserveAspectFit
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -134,7 +100,7 @@ Page {
                 y: 20
                 text: qsTr("TV2 connected to")
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.top: parent.top
+                anchors.top: image3.bottom
                 anchors.topMargin: 20
             }
 
@@ -144,8 +110,20 @@ Page {
                 y: 40
                 text: qsTr("Disconnected")
                 anchors.horizontalCenter: parent.horizontalCenter
+                anchors.top: label1.bottom
+                anchors.topMargin: 20
+            }
+
+            Image {
+                id: image3
+                x: 25
+                width: 80
+                height: 80
                 anchors.top: parent.top
-                anchors.topMargin: 40
+                source: "kuvat/564-512.png"
+                anchors.topMargin: 20
+                fillMode: Image.PreserveAspectFit
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -162,7 +140,7 @@ Page {
                 y: 20
                 text: qsTr("TV3 connected to")
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.top: parent.top
+                anchors.top: image4.bottom
                 anchors.topMargin: 20
             }
 
@@ -172,8 +150,20 @@ Page {
                 y: 40
                 text: qsTr("Disconnected")
                 anchors.horizontalCenter: parent.horizontalCenter
+                anchors.top: label2.bottom
+                anchors.topMargin: 20
+            }
+
+            Image {
+                id: image4
+                x: 25
+                width: 80
+                height: 80
                 anchors.top: parent.top
-                anchors.topMargin: 40
+                source: "kuvat/564-512.png"
+                anchors.topMargin: 20
+                fillMode: Image.PreserveAspectFit
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 
@@ -190,7 +180,7 @@ Page {
                 y: 20
                 text: qsTr("TV4 connected to")
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.top: parent.top
+                anchors.top: image5.bottom
                 anchors.topMargin: 20
             }
 
@@ -200,48 +190,19 @@ Page {
                 y: 40
                 text: qsTr("Disconnected")
                 anchors.horizontalCenter: parent.horizontalCenter
+                anchors.top: label3.bottom
+                anchors.topMargin: 20
+            }
+
+            Image {
+                id: image5
+                x: 25
+                width: 80
+                height: 80
                 anchors.top: parent.top
-                anchors.topMargin: 40
-            }
-
-            Label {
-                id: tv4isChecked
-                x: 62
-                y: 320
-                text: qsTr("Label")
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 80
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            Label {
-                id: tv1isChecked
-                x: 62
-                y: 260
-                text: qsTr("Label")
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 140
-                anchors.horizontalCenterOffset: 0
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            Label {
-                id: tv2isChecked
-                x: 62
-                y: 280
-                text: qsTr("Label")
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 120
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            Label {
-                id: tv3isChecked
-                x: 62
-                y: 300
-                text: qsTr("Label")
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 100
+                source: "kuvat/564-512.png"
+                anchors.topMargin: 20
+                fillMode: Image.PreserveAspectFit
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -255,24 +216,15 @@ Page {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
         anchors.topMargin: -50
+        border.width: 0
     }
 
     Rectangle {
         id: rectangle1
         width: page.width
         height: 30
-        gradient: Gradient {
-            GradientStop {
-                position: 0
-                color: "#00000000"
-            }
-
-            GradientStop {
-                position: 1
-                color: "#ffffff"
-            }
-        }
-        border.color: "#00000000"
+        color: "#00000000"
+        border.width: 0
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 0
@@ -305,13 +257,63 @@ Page {
         fillMode: Image.PreserveAspectFit
         source: "kuvat/Uuden_Tampereen_yliopiston_logo.png"
     }
+
+    Rectangle {
+        id: errorWindow
+        x: 200
+        y: 107
+        width: 400
+        height: 250
+        color: "#ffffff"
+        border.color: "#000000"
+        visible: false
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+        border.width: 5
+
+        Label {
+            id: label4
+            text: qsTr("Remote UDP IP Address Access Deny!")
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+        }
+
+        Button {
+            id: errorOk
+            width: 78
+            height: 32
+            text: qsTr("Ok")
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 20
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
+        Label {
+            id: label5
+            text: qsTr("Connection error")
+            anchors.top: parent.top
+            anchors.topMargin: 50
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+    }
+
+    Connections {
+        target: errorOk
+        onClicked: errorWindow.visible = false
+    }
+
+    Connections {
+        target: errorOk
+        onClicked: goToPage2.visible = true
+    }
 }
 
 
 
 
 /*##^## Designer {
-    D{i:7;anchors_x:0}D{i:15;anchors_height:353;anchors_width:150}D{i:2;anchors_height:100;anchors_width:100}
-D{i:29;anchors_y:134}
+    D{i:7;anchors_y:140}D{i:11;anchors_y:140}D{i:13;anchors_height:353;anchors_width:150}
+D{i:15;anchors_y:140}D{i:19;anchors_y:140}D{i:2;anchors_height:100;anchors_width:100}
+D{i:22;anchors_y:134}D{i:25;anchors_y:134}
 }
  ##^##*/
