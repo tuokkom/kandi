@@ -3,7 +3,6 @@
 #include <QHostAddress>
 #include <QByteArray>
 #include <QTime>
-//-------
 #include <QString>
 
 Server::Server(QObject *parent) : QObject(parent)
@@ -56,13 +55,9 @@ void Server::connectImage(QString sourcenumber, bool target1, bool target2, bool
     sendDatagram(address4x4, port4x4, dataMes4x4);
     emit messageSent(QTime::currentTime().toString(), address4x4.toString(), dataMes4x4);
 
-
-    //----------------------
-    //connection_ = sourcenumber;
+    //-------Made for ui----------
     emit connectionChanged();
-    //----------------------
-
-
+    //----------------------------
 }
 
 void Server::sendcustomMessage(QString message, QString target)
@@ -171,7 +166,7 @@ void Server::sendDatagram(QHostAddress address, quint16 port, QString message)
     udpSocket_->writeDatagram(data, address, port);
 }
 
-//----------------------
+//-----------Made for ui-----------
 QString Server::connection()
 {
     return connection_;
@@ -180,7 +175,6 @@ QString Server::connection()
 void Server::setConnection(QString connect)
 {
     connection_ = connect;
-
 
     std::vector<bool> tvsToConnect;
     for (int i = 0; i < 4; i++ ){
@@ -194,8 +188,5 @@ void Server::setConnection(QString connect)
     //connection_ = tvsToConnect.at(1);
     connectImage(source, tvsToConnect.at(0), tvsToConnect.at(1), tvsToConnect.at(2), tvsToConnect.at(3));
 
-
-
 }
-
-//----------------------
+//---------------------------------

@@ -48,20 +48,11 @@ Page {
         ComboBox {
             id: sourceBox1
             y: 161
+            visible: false
             anchors.left: parent.left
             anchors.leftMargin: 0
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 0
-        }
-
-        Label {
-            id: label1
-            x: 244
-            y: 30
-            text: qsTr("Choose source number")
-            anchors.horizontalCenter: sourceBox1.horizontalCenter
-            anchors.bottom: sourceBox1.top
-            anchors.bottomMargin: 20
         }
 
         FocusScope {
@@ -139,6 +130,11 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "kuvat/89468_circle_512x512.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: teacher2icon
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -186,6 +182,11 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "kuvat/ellipsi.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: hdmi3_2icon
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -210,6 +211,11 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "kuvat/ellipsi.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: hdmi2_2icon
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -234,6 +240,11 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "kuvat/ellipsi.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: hdmi1_2icon
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -281,6 +292,11 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "kuvat/ellipsi.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: hdmi3_3icon
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -305,6 +321,11 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "kuvat/ellipsi.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: hdmi2_3icon
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -329,6 +350,11 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "kuvat/ellipsi.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: hdmi1_3icon
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -354,6 +380,11 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "kuvat/89468_circle_512x512.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: teacher3icon
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -401,6 +432,12 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "kuvat/ellipsi.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: hdmi3_1icon
+                    width: parent.width * 2
+                    height: parent.height
+                }
             }
 
             Image {
@@ -460,6 +497,11 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "kuvat/89468_circle_512x512.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: teacher1icon
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -508,6 +550,12 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "kuvat/ellipsi.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: hdmi3_4icon
+                    width: parent.width * 2
+                    height: parent.height
+                }
             }
 
             Image {
@@ -561,6 +609,12 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "kuvat/ellipsi.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: hdmi2_4icon
+                    width: parent.width * 2
+                    height: parent.height
+                }
             }
         }
 
@@ -586,6 +640,12 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "kuvat/ellipsi.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: hdmi1_4icon
+                    width: parent.width * 2
+                    height: parent.height
+                }
             }
 
             Image {
@@ -625,6 +685,11 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "kuvat/89468_circle_512x512.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: teacher4icon
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -640,6 +705,14 @@ Page {
             anchors.bottomMargin: 5
             source: "kuvat/ellipsi.png"
             fillMode: Image.PreserveAspectFit
+
+            MouseArea {
+                id: hdmi1_1icon
+                width: parent.width * 2
+                height: parent.height
+                anchors.top: parent.top
+                anchors.topMargin: 0
+            }
         }
 
         Image {
@@ -682,6 +755,12 @@ Page {
             anchors.bottomMargin: 5
             source: "kuvat/ellipsi.png"
             fillMode: Image.PreserveAspectFit
+
+            MouseArea {
+                id: hdmi2_1icon
+                width: parent.width * 2
+                height: parent.height
+            }
         }
     }
 
@@ -768,7 +847,7 @@ Page {
 
     Connections {
         target: teacher3
-        onClicked: sourceBox1.currentIndex = 13
+        onPressed: sourceBox1.currentIndex = 13
     }
 
     Connections {
@@ -825,17 +904,102 @@ Page {
         target: chromecast4
         onClicked: sourceBox1.currentIndex = 24
     }
+
+    Connections {
+        target: teacher1icon
+        onClicked: sourceBox1.currentIndex = 1
+    }
+
+    Connections {
+        target: hdmi1_1icon
+        onClicked: sourceBox1.currentIndex = 2
+    }
+
+    Connections {
+        target: hdmi2_1icon
+        onClicked: sourceBox1.currentIndex = 3
+    }
+
+    Connections {
+        target: hdmi3_1icon
+        onClicked: sourceBox1.currentIndex = 4
+    }
+
+    Connections {
+        target: teacher2icon
+        onClicked: sourceBox1.currentIndex = 7
+    }
+
+    Connections {
+        target: hdmi1_2icon
+        onClicked: sourceBox1.currentIndex = 8
+    }
+
+    Connections {
+        target: hdmi2_2icon
+        onClicked: sourceBox1.currentIndex = 9
+    }
+
+    Connections {
+        target: hdmi3_2icon
+        onClicked: sourceBox1.currentIndex = 10
+    }
+
+    Connections {
+        target: teacher3icon
+        onClicked: sourceBox1.currentIndex = 13
+    }
+
+    Connections {
+        target: hdmi1_3icon
+        onClicked: sourceBox1.currentIndex = 14
+    }
+
+    Connections {
+        target: hdmi2_3icon
+        onClicked: sourceBox1.currentIndex = 15
+    }
+
+    Connections {
+        target: hdmi3_3icon
+        onClicked: sourceBox1.currentIndex = 16
+    }
+
+    Connections {
+        target: teacher4icon
+        onClicked: sourceBox1.currentIndex = 19
+    }
+
+    Connections {
+        target: hdmi1_4icon
+        onClicked: sourceBox1.currentIndex = 20
+    }
+
+    Connections {
+        target: hdmi2_4icon
+        onClicked: sourceBox1.currentIndex = 21
+    }
+
+    Connections {
+        target: hdmi3_4icon
+        onClicked: sourceBox1.currentIndex = 22
+    }
 }
 
 
 
 
 /*##^## Designer {
-    D{i:0;height:500;width:1000}D{i:3;anchors_x:240;anchors_y:161}D{i:12;anchors_y:0}
-D{i:11;anchors_x:160}D{i:13;anchors_y:2}D{i:14;anchors_y:4}D{i:15;anchors_y:6}D{i:17;anchors_y:0}
-D{i:19;anchors_y:"-3"}D{i:21;anchors_y:2}D{i:23;anchors_y:6}D{i:25;anchors_y:0}D{i:27;anchors_y:"-3"}
-D{i:34;anchors_height:24;anchors_y:"-217"}D{i:35;anchors_height:24;anchors_y:"-72"}
-D{i:38;anchors_x:10}D{i:40;anchors_y:2}D{i:41;anchors_y:4}D{i:42;anchors_y:6}D{i:45;anchors_y:0}
-D{i:48;anchors_y:"-3"}D{i:52;anchors_height:60;anchors_y:0}D{i:53;anchors_x:14}D{i:2;anchors_height:100;anchors_width:100}
+    D{i:0;height:500;width:1000}D{i:3;anchors_x:240;anchors_y:161}D{i:12;anchors_height:100;anchors_width:100}
+D{i:11;anchors_y:0}D{i:10;anchors_x:160}D{i:13;anchors_y:2}D{i:14;anchors_y:4}D{i:17;anchors_height:100;anchors_width:100}
+D{i:15;anchors_y:6}D{i:20;anchors_height:100;anchors_width:100}D{i:18;anchors_y:0}
+D{i:23;anchors_height:100;anchors_width:100}D{i:21;anchors_y:"-3"}D{i:24;anchors_y:2}
+D{i:28;anchors_height:100;anchors_width:100}D{i:26;anchors_y:6}D{i:31;anchors_height:100;anchors_width:100}
+D{i:29;anchors_y:0}D{i:34;anchors_height:100;anchors_width:100}D{i:32;anchors_y:"-3"}
+D{i:37;anchors_height:100;anchors_width:100}D{i:41;anchors_height:24;anchors_y:"-217"}
+D{i:43;anchors_height:24;anchors_y:"-72"}D{i:48;anchors_height:100;anchors_width:100}
+D{i:46;anchors_x:10}D{i:49;anchors_y:2}D{i:50;anchors_y:4}D{i:51;anchors_y:6}D{i:55;anchors_y:0}
+D{i:59;anchors_y:"-3"}D{i:65;anchors_height:100;anchors_width:100}D{i:64;anchors_height:60;anchors_y:0}
+D{i:66;anchors_x:14}D{i:2;anchors_height:100;anchors_width:100}
 }
  ##^##*/

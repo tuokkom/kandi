@@ -4,6 +4,10 @@ import QtQuick.Controls 2.2
 Page {
     width: 600
     height: 400
+    property alias tv4icon: tv4icon
+    property alias tv3icon: tv3icon
+    property alias tv2icon: tv2icon
+    property alias tv1icon: tv1icon
     property alias tv4: tv4
     property alias tv3: tv3
     property alias tv2: tv2
@@ -60,6 +64,11 @@ Page {
                 anchors.topMargin: 20
                 source: "kuvat/564-512.png"
                 fillMode: Image.PreserveAspectFit
+
+                MouseArea {
+                    id: tv1icon
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -115,6 +124,11 @@ Page {
                 anchors.topMargin: 20
                 fillMode: Image.PreserveAspectFit
                 anchors.horizontalCenter: parent.horizontalCenter
+
+                MouseArea {
+                    id: tv2icon
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -169,6 +183,11 @@ Page {
                 anchors.topMargin: 20
                 fillMode: Image.PreserveAspectFit
                 anchors.horizontalCenter: parent.horizontalCenter
+
+                MouseArea {
+                    id: tv3icon
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -211,6 +230,11 @@ Page {
                 anchors.topMargin: 20
                 fillMode: Image.PreserveAspectFit
                 anchors.horizontalCenter: parent.horizontalCenter
+
+                MouseArea {
+                    id: tv4icon
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -266,7 +290,10 @@ Page {
 
 
 /*##^## Designer {
-    D{i:6;anchors_y:140}D{i:11;anchors_y:140}D{i:16;anchors_y:140}D{i:20;anchors_y:140}
-D{i:21;anchors_x:150;anchors_y:0}D{i:26;anchors_y:"-50"}D{i:2;anchors_height:100;anchors_width:100}
+    D{i:7;anchors_height:100;anchors_width:100}D{i:6;anchors_y:140}D{i:11;anchors_y:140}
+D{i:13;anchors_height:100;anchors_width:100}D{i:12;anchors_y:140}D{i:16;anchors_y:140}
+D{i:19;anchors_height:100;anchors_width:100}D{i:18;anchors_y:140}D{i:21;anchors_x:150;anchors_y:0}
+D{i:24;anchors_height:100;anchors_width:100}D{i:23;anchors_y:140}D{i:20;anchors_y:140}
+D{i:25;anchors_x:150;anchors_y:0}D{i:26;anchors_y:"-50"}D{i:30;anchors_y:"-50"}D{i:2;anchors_height:100;anchors_width:100}
 }
  ##^##*/

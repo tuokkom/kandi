@@ -10,7 +10,7 @@
 class Server : public QObject
 {
     Q_OBJECT
-    //------MUN KOODIA------
+    //------Made for ui------
     Q_PROPERTY(QString connection READ connection WRITE setConnection NOTIFY connectionChanged)
     //----------------------
 public:
@@ -19,10 +19,10 @@ public:
     void connectImage(QString sourcenumber, bool target1, bool target2, bool target3, bool target4);
     void sendcustomMessage(QString message, QString target);
 
-    //------------
+    //-----Made for ui-------
     QString connection();
     void setConnection(QString connect);
-    //-------------
+    //----------------------
 
 public slots:
     void readData();
@@ -30,9 +30,9 @@ public slots:
 signals:
      void messageReceived(QString timestamp, QString source, QString message);
      void messageSent(QString timestamp, QString target, QString message);
-     //---------------
+     //-------Made for ui--------
      void connectionChanged();
-     //---------------
+     //-------------------------
 
 
 private:
@@ -49,12 +49,12 @@ private:
      void sendDatagram(QHostAddress address, quint16 port, QString message);
 
      QUdpSocket *udpSocket_;
-     std::vector<QHostAddress> addresses_; //index# 0=4x4, 1=1st 6x2, 2=2nd 6x2...
+     std::vector<QHostAddress> addresses_; //index# 0=4x4, 1=1st 6x2, 2=2nd 6x2, 3=3rd 6x2, 4=4th 6x2
      std::vector<quint16> ports_;
 
-     //----------------
+     //------Made for ui-------
      QString connection_;
-     //----------------
+     //------------------------
 
 };
 

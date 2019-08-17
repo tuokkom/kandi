@@ -5,6 +5,10 @@ Page {
     id: page
     width: 600
     height: 400
+    property alias mouseArea3: mouseArea3
+    property alias mouseArea2: mouseArea2
+    property alias mouseArea1: mouseArea1
+    property alias mouseArea: mouseArea
     property alias errorOk: errorOk
     property alias errorWindow: errorWindow
     property alias tv4connectedTo: tv4connectedTo
@@ -84,6 +88,11 @@ Page {
                 anchors.topMargin: 20
                 fillMode: Image.PreserveAspectFit
                 anchors.horizontalCenter: parent.horizontalCenter
+
+                MouseArea {
+                    id: mouseArea
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -124,6 +133,11 @@ Page {
                 anchors.topMargin: 20
                 fillMode: Image.PreserveAspectFit
                 anchors.horizontalCenter: parent.horizontalCenter
+
+                MouseArea {
+                    id: mouseArea1
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -164,6 +178,11 @@ Page {
                 anchors.topMargin: 20
                 fillMode: Image.PreserveAspectFit
                 anchors.horizontalCenter: parent.horizontalCenter
+
+                MouseArea {
+                    id: mouseArea2
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -204,6 +223,11 @@ Page {
                 anchors.topMargin: 20
                 fillMode: Image.PreserveAspectFit
                 anchors.horizontalCenter: parent.horizontalCenter
+
+                MouseArea {
+                    id: mouseArea3
+                    anchors.fill: parent
+                }
             }
         }
     }
@@ -228,6 +252,16 @@ Page {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 0
+
+        Label {
+            id: label6
+            x: 246
+            y: 9
+            text: qsTr("© Miro Tuokko 2019")
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 5
+        }
     }
 
     Image {
